@@ -17,7 +17,7 @@ class Grafo:
 		queue = []
 
 		#Marca el nodo iniical como visitado y lo agrega a la lista
-		queue.append(s)
+		queue.append(inicio)
 		visitado[inicio] = True
 
 		while queue:
@@ -29,9 +29,8 @@ class Grafo:
 			#Algoritmo BFS
 			for k in self.grafo[inicio]:
 				if visitado[k] == False:
-                    if visitado[k] != final:
-        				queue.append(k)
-        				visitado[k] = True                    
+                    queue.append(k)
+					visited[k] = True
 
 
 #Llena el grafo con las torres de hanoi
@@ -116,6 +115,5 @@ g.adyacencia(26, 24)
 g.adyacencia(26, 25)
 
 
-print ("Following is Breadth First Traversal"
-				" (starting from vertex 2)")
+print ("Lista Nodo: ")
 g.BFS(0,23)
