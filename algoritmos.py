@@ -32,7 +32,6 @@ class Grafo:
                     queue.append(k)
 					visited[k] = True
 
-
 #Llena el grafo con las torres de hanoi
 g = Grafo()
 g.adyacencia(0, 1)
