@@ -1,8 +1,8 @@
 #coding=utf-8
 
-import random as rand
+from random import randint
 def newChar ():
-    c = rand.randint(32,122)
+    c = randint(32,122)
     return chr(c)
 
 class DNA:
@@ -25,6 +25,19 @@ class DNA:
             if(self.genes[i] == target[i]):
                 self.score = self.score+1
         self.fitness =  float(self.score)/float(self.targetSize)
-        print(self.score)
-        print(self.targetSize)
-        print(self.fitness)
+
+    def crossover(self,partner):
+        child = DNA(len(self.genes))
+        midpoint = randint(0,len(self.genes)-1)
+
+        for i in range(0,len(self.genes)):
+            if(i>midpoint):
+                child.genes[i] = self.genes[i]
+            else:
+                child.genes[i] = partner.genes[i]
+        return child
+
+
+
+        print(len(self.genes))
+        print(midpoint)
